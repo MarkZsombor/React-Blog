@@ -19,3 +19,4 @@ Redux
 React-Router  
 axios  
 redux-promise  
+redux-form  

@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import rootReducer from '../reducers';
 
 export const FETCH_POSTS = 'fetch_posts';
 
