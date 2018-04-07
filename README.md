@@ -12,3 +12,7 @@ Checkout this repo, install dependencies, then start the process with the follow
 ```
 
 BoilerPlate has eslint installed already.
+
+React
+Redux
+React-Router
