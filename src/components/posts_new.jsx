@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component {
+  onSubmit(values) {
+    console.log('values', values);
+  }
+
   renderField(field) {
+    const { meta: { touched, error } } = field;
+    const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+
     return (
-      <div className="form-group">
+      <div className={className}>
         <label>{field.label}</label>
         <input
           className="form-control"
@@ -12,15 +19,21 @@ class PostsNew extends Component {
           // this will map all the event handlers to the Field
           {...field.input}
         />
-        {field.meta.error}
+        <div className="text-help">
+          {/* meta comes from redux-forms */}
+          {touched ? error : ''}
+        </div>
       </div>
     );
   }
 
   render() {
+    // This function is available from the reduxForm function at end of file.
+    const { handleSubmit } = this.props;
+
     return (
       <div>
-        <form>
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             label="Post Title"
             name="title"
@@ -36,6 +49,7 @@ class PostsNew extends Component {
             name="content"
             component={this.renderField}
           />
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
     );
