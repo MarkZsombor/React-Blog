@@ -12,6 +12,7 @@ class PostsNew extends Component {
           // this will map all the event handlers to the Field
           {...field.input}
         />
+        {field.meta.error}
       </div>
     );
   }
@@ -26,8 +27,8 @@ class PostsNew extends Component {
             component={this.renderField}
           />
           <Field
-            label="Tags"
-            name="tags"
+            label="Categories"
+            name="categories"
             component={this.renderField}
           />
           <Field
@@ -41,7 +42,25 @@ class PostsNew extends Component {
   }
 }
 
+function validate(values) {
+  const errors = {};
+  // Validate the values
+  if (!values.title) {
+    errors.title = 'Posts need a title';
+  }
+  if (!values.categories) {
+    errors.categories = 'Please add one or more categories';
+  }
+  if (!values.content) {
+    errors.content = 'A post needs some content';
+  }
+  // Return any possible errors
+  // If errors is empty, then form is good to go
+  return errors;
+}
+
 // All the forms in the app need unique names.
 export default reduxForm({
+  validate,
   form: 'PostsNewForm',
 })(PostsNew);
