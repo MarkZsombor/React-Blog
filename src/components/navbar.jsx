@@ -5,7 +5,7 @@ class NavBar extends Component {
   render() {
     return (
       <div className="navbar navbar-fixed-top">
-        <Link to="/">A Blog Site</Link>
+        <Link to="/">My Blog Site</Link>
       </div>
     );
   }

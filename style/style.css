@@ -7,10 +7,33 @@ form a {
 }
 
 .navbar {
-  background-color: blueviolet;
+  background-color: #60d394;
 }
 
 .navbar a {
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
+  font-family: 'Merriweather',
+  serif;
+}
+
+.post-title {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-family: 'Jua', sans-serif;
+}
+
+.post-categories {
+  margin-bottom: 2rem;
+}
+
+.post-categories span {
+  font-size: 1.3rem;
+  font-family: 'Jua',
+  sans-serif;
+}
+
+.post-content {
+  font-family: 'Jua',
+  sans-serif;
 }
