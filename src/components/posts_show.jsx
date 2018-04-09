@@ -25,8 +25,7 @@ class PostsShow extends Component {
     }
 
     return (
-      <div>
-        <Link to="/">Back to Index</Link>
+      <div className="content">
         <button
           className="btn btn-danger pull-xs-right"
           onClick={this.onDeleteClick.bind(this)}
@@ -41,6 +40,7 @@ class PostsShow extends Component {
   }
 }
 
+// second argument is the props to apply to the function
 // ownProps will refer to the props of the component that calls the function
 // Allows for getting just the Post with correct id from state.
 function mapStateToProps({ posts }, ownProps) {
