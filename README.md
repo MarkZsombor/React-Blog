@@ -1,17 +1,17 @@
-# ReduxSimpleStarter
+# My Blog
+
+A blog site step up using React and Redux for the purpose of getting more experience using Redux for handling application state. Site shows by default a list of blog posts, and through the use of react-router can then move to individual blog posts. New blog posts can be made, and old ones destroyed.
+
+TODO: Add Users, currently anyone can make/destroy posts.  
 
 ## Getting Started
 
-Checkout this repo, install dependencies, then start the process with the following:
+Clone the Repo!  
+Install Dependancies! `npm install`  
+Start the Server! `npm start`  
+View the Page! `localhost:8080`  
 
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-BoilerPlate has eslint installed already.
+## Dependancies
 
 Dependancies:  
 React  
