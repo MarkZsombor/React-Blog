@@ -13,7 +13,6 @@ View the Page! `localhost:8080`
 
 ## Dependancies
 
-Dependancies:  
 React  
 Redux  
 React-Router  
