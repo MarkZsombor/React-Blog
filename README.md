@@ -13,10 +13,11 @@ View the Page! `localhost:8080`
 
 ## Dependancies
 
-Dependancies:  
 React  
 Redux  
 React-Router  
 axios  
 redux-promise  
 redux-form  
+
+This project was started using the boilerplate found [here](https://github.com/MarkZsombor/ReduxSimpleStarter).
