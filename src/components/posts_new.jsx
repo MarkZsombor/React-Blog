@@ -19,7 +19,7 @@ class PostsNew extends Component {
     return (
       <div className={className}>
         <label>{field.label}</label>
-        <input
+        <field.type
           className="form-control"
           type="text"
           // this will map all the event handlers to the Field
@@ -43,16 +43,19 @@ class PostsNew extends Component {
           <Field
             label="Post Title"
             name="title"
+            type="input"
             component={this.renderField}
           />
           <Field
             label="Categories"
             name="categories"
+            type="input"
             component={this.renderField}
           />
           <Field
             label="Post Content"
             name="content"
+            type="textarea"
             component={this.renderField}
           />
           <button type="submit" className="btn btn-primary">Submit</button>
