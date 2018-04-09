@@ -13,14 +13,13 @@ form a {
 .navbar a {
   color: black;
   font-size: 1.9rem;
-  font-family: 'Merriweather',
-  serif;
+  font-family: "Merriweather", serif;
 }
 
 .post-title {
   font-weight: 600;
   margin-bottom: 2rem;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 .post-categories {
@@ -29,11 +28,9 @@ form a {
 
 .post-categories span {
   font-size: 1.3rem;
-  font-family: 'Jua',
-  sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 .post-content {
-  font-family: 'Jua',
-  sans-serif;
+  font-family: "Jua", sans-serif;
 }
