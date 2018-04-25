@@ -19,5 +19,6 @@ React-Router
 axios  
 redux-promise  
 redux-form  
+PassportJS
 
 This project was started using the boilerplate found [here](https://github.com/MarkZsombor/ReduxSimpleStarter).

@@ -1,2 +1,2 @@
 web: node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js
-server: nodemon server.js
+api: nodemon api-server.js

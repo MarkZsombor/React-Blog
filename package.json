@@ -10,7 +10,7 @@
     "test:watch": "npm run test -- --watch",
     "postinstall": "webpack -p",
     "start": "node server.js",
-    "start-dev": "nf start -p 8080"
+    "start-dev": "nf start -p 5000"
   },
   "author": "",
   "license": "ISC",
@@ -40,6 +40,8 @@
     "foreman": "^2.0.0",
     "lodash": "^3.10.1",
     "nodemon": "^1.17.3",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
