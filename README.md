@@ -19,6 +19,8 @@ React-Router
 axios  
 redux-promise  
 redux-form  
-PassportJS
+PassportJS (Google Oauth)  
+MongoDB  
+Mongoose  
 
 This project was started using the boilerplate found [here](https://github.com/MarkZsombor/ReduxSimpleStarter).
