@@ -38,7 +38,7 @@ class PostsNew extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <div className="content">
+      <div>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             label="Post Title"

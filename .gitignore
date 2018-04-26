@@ -1,4 +1,5 @@
 /node_modules
+/client/node_modules
 bundle.js
 npm-debug.log
 .DS_Store
@@ -7,3 +8,5 @@ npm-debug.log
 *.iml
 /.idea
 keys.js
+
+/oldclient

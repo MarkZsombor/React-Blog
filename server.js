@@ -1,13 +1,29 @@
 const express = require('express');
-const path = require('path');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+const keys = require('./server/config/keys');
+require('./server/models/User');
+require('./server/services/passport');
 
-const PORT = process.env.PORT || 8080;
+mongoose.connect(keys.mongoURI);
+
 const app = express();
 
-app.use(express.static(__dirname));
+app.use(cookieSession({
+  maxAge: 30 * 24 * 60 * 60 * 1000, // 30days
+  keys: [keys.cookieKey],
+}));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./server/routes/authRoutes')(app);
+
+const PORT = 5000;
+// for some reason this keeps defaulting to 5100
+// const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
 });
-
-app.listen(PORT);
