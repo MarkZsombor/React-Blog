@@ -22,21 +22,35 @@ passport.use(new GoogleStrategy(
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
   },
-  (accessToken, refreshToken, profile, done) => {
-    User.findOne({ googleId: profile.id })
-      .then((existingUser) => {
-        if (existingUser) {
-          // done first arg is errors, second is returned value
-          done(null, existingUser);
-        } else {
-          new User({
-            googleId: profile.id,
-            userHandle: profile.displayName,
-          }).save()
-            .then((user) => {
-              done(null, user);
-            });
-        }
-      });
+  async (accessToken, refreshToken, profile, done) => {
+    const existingUser = await User.findOne({ googleId: profile.id });
+    if (existingUser) {
+      // done first arg is errors, second is returned value
+      done(null, existingUser);
+    } else {
+      const user = await new User({
+        googleId: profile.id,
+        userHandle: profile.displayName,
+      }).save();
+      done(null, user);
+    }
   },
 ));
+
+//   (accessToken, refreshToken, profile, done) => {
+//   User.findOne({ googleId: profile.id })
+//     .then((existingUser) => {
+//       if (existingUser) {
+//         // done first arg is errors, second is returned value
+//         done(null, existingUser);
+//       } else {
+//         new User({
+//           googleId: profile.id,
+//           userHandle: profile.displayName,
+//         }).save()
+//           .then((user) => {
+//             done(null, user);
+//           });
+//       }
+//     });
+// },
