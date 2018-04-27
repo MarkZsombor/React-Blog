@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Header from './Header';
 import PostsIndex from './posts_index';
@@ -7,16 +9,24 @@ import PostsIndex from './posts_index';
 // import PostsShow from './posts_show';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+    
+  }
+
   render() {
     return (
       <div>
         <BrowserRouter>
           <div>
             <Header />
-            {/* <Route path="/posts/new" Component={PostsNew} /> */}
-            {/* <Route path="/posts/:id" Component={PostsShow} /> */}
-            {/* User Profile */}
-            <Route exact path="/" component={PostsIndex} />
+            <div className="container">
+              {/* <Route path="/posts/new" Component={PostsNew} /> */}
+              {/* <Route path="/posts/:id" Component={PostsShow} /> */}
+              {/* User Profile */}
+              {/* User Posts */}
+              <Route exact path="/" component={PostsIndex} />
+            </div>
           </div>
         </BrowserRouter>
       </div>
@@ -24,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions)(App);

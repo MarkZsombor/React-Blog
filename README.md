@@ -15,6 +15,7 @@ View the Page! `localhost:8080`
 
 React  
 Redux  
+Redux-thunk  
 React-Router  
 axios  
 redux-promise  
