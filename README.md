@@ -24,4 +24,3 @@ MongoDB
 Mongoose  
 Cookie-Session  
 
-This project was started using the boilerplate found [here](https://github.com/MarkZsombor/ReduxSimpleStarter).
