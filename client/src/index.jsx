@@ -7,7 +7,6 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
-// import 
 // import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
