@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { fetchPost, deletePost } from "../actions";
+import { fetchPost, deletePost } from '../actions/index';
 
 class PostsShow extends Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class PostsShow extends Component {
   onDeleteClick() {
     const { id } = this.props.match.params;
     this.props.deletePost(id, () => {
-      this.props.history.push("/");
+      this.props.history.push('/');
     });
   }
 

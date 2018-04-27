@@ -5,13 +5,12 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import PostsIndex from './posts_index';
-// import PostsNew from './posts_new';
-// import PostsShow from './posts_show';
+import PostsNew from './posts_new';
+import PostsShow from './posts_show';
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
-    
   }
 
   render() {
@@ -21,8 +20,8 @@ class App extends Component {
           <div>
             <Header />
             <div className="container">
-              {/* <Route path="/posts/new" Component={PostsNew} /> */}
-              {/* <Route path="/posts/:id" Component={PostsShow} /> */}
+              <Route path="/posts/new" component={PostsNew} />
+              <Route path="/posts/:id" component={PostsShow} />
               {/* User Profile */}
               {/* User Posts */}
               <Route exact path="/" component={PostsIndex} />
