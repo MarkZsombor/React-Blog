@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
+  renderCreatePost() {
+    if (this.props.auth) {
+      return <li><Link className="btn btn-primary" to="/posts/new">Add a Post</Link></li>;
+    }
+  }
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -17,8 +23,9 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a className="left brand-logo">Blogtastic</a>
+          <Link className="left brand-logo" to="/">Blogtastic</Link>
           <ul className="right">
+            {this.renderCreatePost()}
             {this.renderContent()}
           </ul>
         </div>
