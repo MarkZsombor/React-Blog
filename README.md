@@ -25,4 +25,4 @@ MongoDB
 Mongoose  
 Cookie-Session  
 Materialize CSS  
-
+lodash  
