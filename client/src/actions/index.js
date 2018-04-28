@@ -27,11 +27,12 @@ export const fetchPosts = () => async (dispatch) => {
 };
 
 export function createPost(values, callback) {
-  const request = axios.post('/api/posts', values)
-    .then(() => callback());
-  return {
-    type: CREATE_POST,
-    payload: request,
+  return (dispatch) => {
+    axios.post('/api/posts', values)
+      .then(
+        res => dispatch({ type: CREATE_POST, payload: res }),
+        () => callback(),
+      );
   };
 }
 

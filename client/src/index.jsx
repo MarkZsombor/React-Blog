@@ -17,7 +17,10 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App
+      url="http://localhost:3000"
+      pollInterval={20000}
+    />
   </Provider>,
   document.getElementById('root'),
 );
