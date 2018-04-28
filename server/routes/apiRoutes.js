@@ -1,4 +1,5 @@
 const Post = require('../models/Posts');
+let user = {};
 
 module.exports = (app) => {
   app.get('/api/logout', (req, res) => {
@@ -8,6 +9,7 @@ module.exports = (app) => {
   });
 
   app.get('/api/current_user', (req, res) => {
+    user = req.user;
     res.send(req.user);
   });
 
@@ -21,11 +23,14 @@ module.exports = (app) => {
   });
 
   app.post('/api/posts', (req, res) => {
+    console.log('user', user)
     const post = new Post();
     post.title = req.body.title;
     post.categories = req.body.categories;
     post.content = req.body.content;
     post.createDate = Date.now();
+    post.authorHandle = user.userHandle;
+    post.authorId = user['_id'];
     post.save((err) => {
       if (err) {
         res.send(err);

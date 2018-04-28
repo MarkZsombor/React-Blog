@@ -5,9 +5,10 @@ const { Schema } = mongoose;
 const postSchema = new Schema({
   title: String,
   categories: String,
-  // authorHandle: String,
   content: String,
   createDate: { type: Date, default: Date.now },
+  authorHandle: String,
+  authorId: String,
 });
 
 module.exports = mongoose.model('posts', postSchema);

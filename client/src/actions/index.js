@@ -30,8 +30,8 @@ export function createPost(values, callback) {
   return (dispatch) => {
     axios.post('/api/posts', values)
       .then(
-        res => dispatch({ type: CREATE_POST, payload: res }),
         () => callback(),
+        res => dispatch({ type: CREATE_POST, payload: res }),
       );
   };
 }

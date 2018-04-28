@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { fetchPost, deletePost } from '../actions/index';
 
@@ -33,6 +32,7 @@ class PostsShow extends Component {
           Delete Post
         </button>
         <h3 className="post-title">{post.title}</h3>
+        <h4 className="post-author">By {post.authorHandle}</h4>
         <h4 className="post-categories">Categories: {post.categories}</h4>
         <p className="post-content">{post.content}</p>
       </div>
