@@ -45,13 +45,13 @@ class PostsUpdate extends Component {
             <Field
               label={this.props.initialValues.title}
               name="title"
-              type="textarea"
+              type="input"
               component={this.renderField}
             />
             <Field
               label={this.props.initialValues.categories}
               name="categories"
-              type="textarea"
+              type="input"
               component={this.renderField}
             />
             <Field

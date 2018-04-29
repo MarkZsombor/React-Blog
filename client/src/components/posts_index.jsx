@@ -11,8 +11,7 @@ class PostsIndex extends Component {
   }
 
   renderPosts() {
-    console.log(this.props.posts);
-    return _.map(this.props.posts, post => {
+    return _.map(this.props.posts, (post) => {
       return (
         <li key={post._id} className="list-group-item">
           <Link to={`/posts/${post._id}`}>
