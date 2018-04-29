@@ -50,12 +50,4 @@ export function deletePost(id, callback) {
         () => dispatch({ type: DELETE_POST, payload: id }),
       );
   };
-
-
-  // const request = axios.delete(`/api/posts/${id}`)
-  //   .then(() => callback());
-  // return {
-  //   type: DELETE_POST,
-  //   payload: id,
-  // };
 }
