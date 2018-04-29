@@ -35,18 +35,6 @@ class App extends Component {
         this.setState({ data: posts });
       });
   }
-  handlePostUpdate = (post) => {
-    // let posts = this.state.data;
-    console.log('post in update post', post);
-    // axios.put(this.props.url, post)
-    //   .then((res) => {
-    //     this.loadPostsFromServer();
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     this.setState({ data: posts });
-    //   });
-  }
   componentDidMount() {
     this.props.fetchUser();
     this.loadPostsFromServer();
@@ -62,7 +50,7 @@ class App extends Component {
             <div className="container">
               <Switch>
                 <Route path="/posts/new" component={PostsNew} onPostSubmit= { this.handlePostSubmit } />
-                <Route path="/posts/update/:id" component={PostsUpdate} onPostUpdate={ this.handlePostUpdate } />
+                <Route path="/posts/update/:id" component={PostsUpdate} />
                 <Route path="/posts/:id" component={PostsShow} />
                 {/* User Profile */}
                 {/* User Posts */}

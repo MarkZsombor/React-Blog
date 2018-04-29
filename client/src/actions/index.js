@@ -54,8 +54,6 @@ export function deletePost(id, callback) {
 }
 
 export function updatePost(values, id, callback) {
-  console.log('im in the update action');
-  console.log(values);
   return (dispatch) => {
     axios.put(`/api/posts/${id}`, values)
       .then(

@@ -7,7 +7,6 @@ import { createPost } from '../actions/index';
 class PostsNew extends Component {
   onSubmit(values) {
     this.props.createPost(values, () => {
-      console.log('im in the create post callback');
       this.props.history.push('/');
     });
   }

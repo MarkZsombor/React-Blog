@@ -23,7 +23,6 @@ module.exports = (app) => {
   });
 
   app.post('/api/posts', (req, res) => {
-    console.log('user', user)
     const post = new Post();
     post.title = req.body.title;
     post.categories = req.body.categories;

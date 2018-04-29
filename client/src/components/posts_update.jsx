@@ -19,7 +19,6 @@ class PostsUpdate extends Component {
 
   renderField(field) {
     const className = 'form-group';
-    console.log('field', field);
     return (
       <div className={className}>
         <label>{field.label}</label>
@@ -36,7 +35,6 @@ class PostsUpdate extends Component {
   render() {
     // This function is available from the reduxForm function at end of file.
     const { handleSubmit } = this.props;
-    console.log('props', this.props.initialValues);
     // if (this.props.post) {
     //   const { post } = this.props;
       return (
@@ -71,9 +69,7 @@ class PostsUpdate extends Component {
 }
 
 function mapStateToProps({ posts }, ownProps) {
-  console.log('posts input', posts);
   let post = posts[ownProps.match.params.id];
-  console.log(post, 'post');
   if (post) {
     return {
       initialValues: {
