@@ -57,7 +57,7 @@ class PostsShow extends Component {
     if (!post) {
       return <div>...Loading...</div>;
     }
-
+    console.log('date', post.createDate, typeof post.createDate)
     return (
       <div>
         {this.renderDeleteButton()}
@@ -66,6 +66,7 @@ class PostsShow extends Component {
         <h4 className="post-author">By {post.authorHandle}</h4>
         <h4 className="post-categories">Categories: {post.categories}</h4>
         <p className="post-content">{post.content}</p>
+        <p className="post-date">{post.createDate}</p>
       </div>
     );
   }
