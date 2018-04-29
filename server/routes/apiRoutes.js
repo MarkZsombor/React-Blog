@@ -47,5 +47,31 @@ module.exports = (app) => {
       res.json(post);
     });
   });
+
+  app.put('/api/posts/:id', (req, res) => {
+    Post.findById(req.params.id, (err, post) => {
+      if (err) {
+        res.send(err);
+      }
+      req.body.title ? post.title = req.body.title : null;
+      req.body.categories ? post.categories = req.body.categories : null;
+      req.body.content ? post.content = req.body.content : null;
+      comment.save((err) => {
+        if (err) {
+          res.send(err);
+        }
+        res.json({ message: "Post Updated" });
+      });
+    });
+  });
+
+  app.delete('/api/posts/:id', (req, res) => {
+    Post.remove({ _id: req.params.id }, (err, post) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json({ message: 'Post Deleted' });
+    });
+  });
 };
 
