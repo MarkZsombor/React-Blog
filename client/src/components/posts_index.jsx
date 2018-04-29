@@ -40,9 +40,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { fetchPosts })(PostsIndex);
-// const PostsIndex = () => {
-//   return (
-//     <h1>Posts Index</h1>
-//   );
-// }
-// export default PostsIndex;
