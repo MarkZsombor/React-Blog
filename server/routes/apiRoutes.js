@@ -56,7 +56,7 @@ module.exports = (app) => {
       req.body.title ? post.title = req.body.title : null;
       req.body.categories ? post.categories = req.body.categories : null;
       req.body.content ? post.content = req.body.content : null;
-      comment.save((err) => {
+      post.save((err) => {
         if (err) {
           res.send(err);
         }

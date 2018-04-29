@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   renderCreatePost() {
     if (this.props.auth) {
-      return <li><Link className="btn btn-primary" to="/posts/new">Add a Post</Link></li>;
+      return <li><Link to="/posts/new">Add a Post</Link></li>;
     }
   }
   renderContent() {

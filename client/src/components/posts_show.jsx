@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchPost, deletePost } from '../actions/index';
@@ -20,14 +21,34 @@ class PostsShow extends Component {
     const { post } = this.props;
     const { auth } = this.props;
     if (auth && post) {
-      return (
-        <button
-          className="btn btn-danger pull-xs-right"
-          onClick={this.onDeleteClick.bind(this)}
-        >
+      if (auth._id === post.authorId) {
+        return (
+          <button
+            className="btn btn-danger pull-xs-right"
+            onClick={this.onDeleteClick.bind(this)}
+          >
           Delete Post
-        </button>
-      );
+          </button>
+        );
+      }
+    }
+  }
+
+  renderUpdateButton() {
+    const { post } = this.props;
+    const { auth } = this.props;
+    if (auth && post) {
+      if (auth._id === post.authorId) {
+        const url = `/posts/update/${post._id}`
+        return (
+          <Link
+            className="btn btn-danger pull-xs-right"
+            to={url}
+          >
+            Update Post
+          </Link>
+        );
+      }
     }
   }
 
@@ -40,6 +61,7 @@ class PostsShow extends Component {
     return (
       <div>
         {this.renderDeleteButton()}
+        {this.renderUpdateButton()}
         <h3 className="post-title">{post.title}</h3>
         <h4 className="post-author">By {post.authorHandle}</h4>
         <h4 className="post-categories">Categories: {post.categories}</h4>
