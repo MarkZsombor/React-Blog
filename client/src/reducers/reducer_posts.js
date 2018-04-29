@@ -12,7 +12,7 @@ export default function (state = {}, action) {
       return newState;
       // return { ...state, [action.payload.data.id]: action.payload.data };
     case FETCH_POSTS:
-      return _.mapKeys(action.payload.data, '_id');
+      return _.mapKeys(action.payload.data.reverse(), '_id');
     default:
       return state;
   }
