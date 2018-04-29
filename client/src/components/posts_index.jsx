@@ -26,6 +26,7 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
+        <Link to="/users/all">User List</Link>
         <h3>Posts</h3>
         <ul className="list-group">
           {this.renderPosts()}

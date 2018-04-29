@@ -57,7 +57,7 @@ class PostsShow extends Component {
     if (!post) {
       return <div>...Loading...</div>;
     }
-    console.log('date', post.createDate, typeof post.createDate)
+    // console.log('date', post.createDate, typeof post.createDate)
     return (
       <div>
         {this.renderDeleteButton()}

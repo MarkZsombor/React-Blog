@@ -1,5 +1,7 @@
 const Post = require('../models/Posts');
-let user = {};
+const User = require('../models/User');
+
+let currentUser = {};
 
 module.exports = (app) => {
   app.get('/api/logout', (req, res) => {
@@ -9,8 +11,17 @@ module.exports = (app) => {
   });
 
   app.get('/api/current_user', (req, res) => {
-    user = req.user;
+    currentUser = req.user;
     res.send(req.user);
+  });
+
+  app.get('/api/users', (req, res) => {
+    User.find((err, users) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(users);
+    });
   });
 
   app.get('/api/posts', (req, res) => {
@@ -28,8 +39,8 @@ module.exports = (app) => {
     post.categories = req.body.categories;
     post.content = req.body.content;
     post.createDate = Date.now();
-    post.authorHandle = user.userHandle;
-    post.authorId = user['_id'];
+    post.authorHandle = currentUser.userHandle;
+    post.authorId = currentUser['_id'];
     post.save((err) => {
       if (err) {
         res.send(err);

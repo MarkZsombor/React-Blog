@@ -7,13 +7,16 @@ export default function (state = {}, action) {
       return _.omit(state, action.payload);
     case FETCH_POST:
       const post = action.payload.data;
-      const newState = { ...state, };
+      let newState = { ...state, };
       newState[post._id] = post;
       return newState;
       // return { ...state, [action.payload.data.id]: action.payload.data };
     case FETCH_POSTS:
-      return _.mapKeys(action.payload.data.reverse(), '_id');
+      const postObj = _.mapKeys(action.payload.data.reverse(), '_id');
+      newState = Object.assign({}, state, postObj);
+      return newState;    
     default:
       return state;
   }
 }
+

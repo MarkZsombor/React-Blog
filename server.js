@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const axios = require('axios');
 
 const keys = require('./server/config/keys');
 const Post = require('./server/models/Posts');
+const User = require('./server/models/User');
 require('./server/models/User');
 require('./server/services/passport');
 
@@ -30,7 +30,6 @@ app.use(passport.session());
 require('./server/routes/authRoutes')(app);
 require('./server/routes/apiRoutes')(app);
 
-// const PORT = 5000;
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
