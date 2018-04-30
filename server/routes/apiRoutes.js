@@ -41,6 +41,7 @@ module.exports = (app) => {
     post.createDate = Date.now();
     post.authorHandle = currentUser.userHandle;
     post.authorId = currentUser['_id'];
+    post.imageURL = req.body.image;
     post.save((err) => {
       if (err) {
         res.send(err);

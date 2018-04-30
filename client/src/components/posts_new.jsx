@@ -22,10 +22,11 @@ class PostsNew extends Component {
         <field.type
           className="form-control"
           type="text"
+          placeholder={field.label}
           // this will map all the event handlers to the Field
           {...field.input}
         />
-        <div className="text-help">
+        <div className="text-help red-text text-darken-2">
           {/* meta comes from redux-forms */}
           {touched ? error : ''}
         </div>
@@ -53,13 +54,19 @@ class PostsNew extends Component {
             component={this.renderField}
           />
           <Field
+            label="Share Image URL"
+            name="image"
+            type="input"
+            component={this.renderField}
+          />
+          <Field
             label="Post Content"
             name="content"
             type="textarea"
             component={this.renderField}
           />
-          <button type="submit" className="btn btn-primary">Submit</button>
-          <Link to="/" className="btn btn-danger">Cancel</Link>
+          <button type="submit" className="btn blue">Submit</button>
+          <Link to="/" className="btn red">Cancel</Link>
         </form>
       </div>
     );

@@ -51,17 +51,27 @@ class PostsShow extends Component {
     }
   }
 
+  renderImage(post) {
+    if (post.imageURL) {
+      return (
+        <img src={post.imageURL} alt={post.title} style={{ height: '300px' }} />
+      );
+    }
+  }
+
   render() {
     const { post } = this.props;
     if (!post) {
       return <div>...Loading...</div>;
     }
+    console.log('post', post);
     let postDate = post.createDate.slice(0, 10);
     return (
       <div>
         <h3 className="post-title">{post.title}</h3>
-        <h4 className="post-author">By <Link to={`/users/${post.authorId}`}>{post.authorHandle}</Link></h4>
+        <h4 className="post-author"><Link to={`/users/${post.authorId}`}>By {post.authorHandle}</Link></h4>
         <h4 className="post-categories">Categories: {post.categories}</h4>
+        {this.renderImage(post)}
         <p className="post-content">{post.content}</p>
         <p className="post-date">Posted on: {postDate}</p>
         {this.renderUpdateButton()}
