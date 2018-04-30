@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header';
+import Launch from './Launch';
 import PostsIndex from './posts_index';
 import PostsNew from './posts_new';
 import PostsShow from './posts_show';
@@ -17,12 +18,14 @@ class App extends Component {
     super(props);
     this.state = { data: [] };
   }
+
   loadPostsFromServer = () => {
     axios.get(this.props.url)
       .then((res) => {
         this.setState({ data: res.data });
       });
   }
+
   handlePostSubmit = (post) => {
     let posts = this.state.data;
     post._id = Date.now();
@@ -37,6 +40,7 @@ class App extends Component {
         this.setState({ data: posts });
       });
   }
+  
   componentDidMount() {
     this.props.fetchUser();
     this.loadPostsFromServer();
@@ -51,12 +55,13 @@ class App extends Component {
             <Header />
             <div className="container">
               <Switch>
+                <Route exact path="/posts/all" component={PostsIndex} />
                 <Route path="/posts/new" component={PostsNew} onPostSubmit= { this.handlePostSubmit } />
                 <Route path="/posts/update/:id" component={PostsUpdate} />
                 <Route path="/posts/:id" component={PostsShow} />
                 <Route path="/users/all" component={UserList} />
                 <Route path="/users/:id" component={UserProfile} />
-                <Route exact path="/" component={PostsIndex} />
+                <Route exact path="/" component={Launch} />
               </Switch>
             </div>
           </div>

@@ -20,8 +20,8 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
-          <Link className="left brand-logo" to="/">Blogtastic</Link>
+        <div className="blue nav-wrapper">
+          <Link className="left brand-logo" to="/">  Blogtastic</Link>
           <ul className="right">
             {this.renderContent()}
           </ul>

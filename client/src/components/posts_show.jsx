@@ -24,7 +24,7 @@ class PostsShow extends Component {
       if (auth._id === post.authorId) {
         return (
           <button
-            className="btn btn-danger pull-xs-right"
+            className="btn red"
             onClick={this.onDeleteClick.bind(this)}
           >
           Delete Post
@@ -41,7 +41,7 @@ class PostsShow extends Component {
       if (auth._id === post.authorId) {
         return (
           <Link
-            className="btn btn-danger pull-xs-right"
+            className="btn blue"
             to={`/posts/update/${post._id}`}
           >
             Update Post
@@ -53,20 +53,19 @@ class PostsShow extends Component {
 
   render() {
     const { post } = this.props;
-    const url = `/users/${post.authorId}`;
     if (!post) {
       return <div>...Loading...</div>;
     }
-    // console.log('date', post.createDate, typeof post.createDate)
+    let postDate = post.createDate.slice(0, 10);
     return (
       <div>
-        {this.renderDeleteButton()}
-        {this.renderUpdateButton()}
         <h3 className="post-title">{post.title}</h3>
-        <h4 className="post-author">By <Link to={url}>{post.authorHandle}</Link></h4>
+        <h4 className="post-author">By <Link to={`/users/${post.authorId}`}>{post.authorHandle}</Link></h4>
         <h4 className="post-categories">Categories: {post.categories}</h4>
         <p className="post-content">{post.content}</p>
-        <p className="post-date">{post.createDate}</p>
+        <p className="post-date">Posted on: {postDate}</p>
+        {this.renderUpdateButton()}
+        {this.renderDeleteButton()}
       </div>
     );
   }
