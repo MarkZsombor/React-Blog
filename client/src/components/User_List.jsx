@@ -11,13 +11,12 @@ class UserList extends Component {
   }
 
   renderUsers() {
-    console.log('props in render user', this.props);
     return _.map(this.props.users, (user) => {
       return (
         <li key={user._id} className="list-group-item">
-          {/* <Link to={`/users/${user._id}`}> */}
-          {user.userHandle}
-          {/* </Link> */}
+          <Link to={`/users/${user._id}`}>
+            {user.userHandle}
+          </Link>
         </li>
       );
     });

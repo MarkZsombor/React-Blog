@@ -29,7 +29,7 @@ export const fetchUsers = () => async (dispatch) => {
 };
 
 export const fetchPosts = () => async (dispatch) => {
-  const request = await axios.get('api/posts');
+  const request = await axios.get('http://localhost:3000/api/posts');
 
   dispatch({ type: FETCH_POSTS, payload: request });
 };

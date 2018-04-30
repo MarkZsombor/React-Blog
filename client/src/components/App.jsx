@@ -10,6 +10,7 @@ import PostsNew from './posts_new';
 import PostsShow from './posts_show';
 import PostsUpdate from './posts_update';
 import UserList from './User_List';
+import UserProfile from './User_Profile';
 
 class App extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ class App extends Component {
                 <Route path="/posts/update/:id" component={PostsUpdate} />
                 <Route path="/posts/:id" component={PostsShow} />
                 <Route path="/users/all" component={UserList} />
-                {/* <Route path="/users/:id" component={UserProfile} /> */}
+                <Route path="/users/:id" component={UserProfile} />
                 <Route exact path="/" component={PostsIndex} />
               </Switch>
             </div>
