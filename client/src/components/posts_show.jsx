@@ -54,6 +54,7 @@ class PostsShow extends Component {
 
   render() {
     const { post } = this.props;
+    const url = `/users/${post.authorId}`;
     if (!post) {
       return <div>...Loading...</div>;
     }
@@ -63,7 +64,7 @@ class PostsShow extends Component {
         {this.renderDeleteButton()}
         {this.renderUpdateButton()}
         <h3 className="post-title">{post.title}</h3>
-        <h4 className="post-author">By {post.authorHandle}</h4>
+        <h4 className="post-author">By <Link to={url}>{post.authorHandle}</Link></h4>
         <h4 className="post-categories">Categories: {post.categories}</h4>
         <p className="post-content">{post.content}</p>
         <p className="post-date">{post.createDate}</p>
