@@ -39,11 +39,10 @@ class PostsShow extends Component {
     const { auth } = this.props;
     if (auth && post) {
       if (auth._id === post.authorId) {
-        const url = `/posts/update/${post._id}`
         return (
           <Link
             className="btn btn-danger pull-xs-right"
-            to={url}
+            to={`/posts/update/${post._id}`}
           >
             Update Post
           </Link>
