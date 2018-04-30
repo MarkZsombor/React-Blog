@@ -10,9 +10,9 @@ export default function (state = {}, action) {
       let newState = { ...state, };
       newState[post._id] = post;
       return newState;
-      // return { ...state, [action.payload.data.id]: action.payload.data };
     case FETCH_POSTS:
-      const postObj = _.mapKeys(action.payload.data.reverse(), '_id');
+      let posts = _.sortBy(action.payload.data, "createDate");
+      const postObj = _.mapKeys(posts.reverse(), '_id');
       newState = Object.assign({}, state, postObj);
       return newState;    
     default:
