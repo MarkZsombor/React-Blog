@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
   render() {
     return (
-      <footer className="page-footer">
-        <div className="container blue">
-          <p className="left white-text">Blogtastic was made by Mark Zsombor</p>
-        </div>
-      </footer>
+      <div className="row" style={{ margin: '10px' }}>
+        <div className="col s3 offset-s3"><Link to="/users/all" className="white-text btn blue darken-2">Users List</Link></div>
+        <div className="col s3"><Link to="/posts/all" className="white-text btn blue darken-2">Posts List</Link></div>
+      </div>
     );
   }
 }
