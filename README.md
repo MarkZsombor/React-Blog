@@ -1,8 +1,8 @@
-# My Blog
+# Blogtastic
 
-A blog site step up using React and Redux for the purpose of getting more experience using Redux for handling application state. Site shows by default a list of blog posts, and through the use of react-router can then move to individual blog posts. New blog posts can be made, and old ones destroyed.
+A blog site step up using React and Redux for the purpose of getting more experience using Redux for handling application state. Site shows by default a list of blog posts, and through the use of react-router can then move to individual blog posts. New blog posts can be made, and old ones updated or destroyed.
 
-TODO: Add Users, currently anyone can make/destroy posts.  
+TODO: Fix the auto-populate update forms. Add comments to posts.
 
 ## Getting Started
 

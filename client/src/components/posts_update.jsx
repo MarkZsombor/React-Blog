@@ -66,8 +66,8 @@ class PostsUpdate extends Component {
               type="textarea"
               component={this.renderField}
             />
-            <button type="submit" className="btn blue darken-2">Update</button>
-            <Link to="/" className="btn red">Cancel</Link>
+            <button type="submit" className="waves-effect waves-light btn blue darken-2">Update</button>
+            <Link to="/" className="waves-effect waves-light btn red">Cancel</Link>
           </form>
         </div>
       );

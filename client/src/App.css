@@ -2,16 +2,18 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
-#main {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
+textarea {
+  height: 120px;
 }
 
-.content {
-  flex: 1 0 auto;
+.m10 {
+  margin-top: 10px;
 }
 
-footer {
-  flex-shrink: 0;
+.post-image {
+  height: 250px;
+}
+
+.user-avatar {
+  height: 150px;
 }

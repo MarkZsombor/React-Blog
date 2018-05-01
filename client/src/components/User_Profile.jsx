@@ -16,7 +16,7 @@ class UserProfile extends Component {
       if (auth._id === user._id) {
         return (
           <Link
-            className="btn blue darken-2"
+            className="waves-effect waves-light btn blue darken-2"
             to={`/users/update/${user._id}`}
           >
             Update User Info
@@ -35,7 +35,7 @@ class UserProfile extends Component {
     if (users) {
       user = users[id];
       if (!user.picture) {
-        profilePicture = 'https://i.pinimg.com/originals/0e/ca/cf/0ecacf1245c5e8c723414ea1a19407cf.jpg';
+        profilePicture = 'http://localhost:3000/images/no-profile.jpg';
       } else {
         profilePicture = user.picture;
       }
@@ -49,7 +49,7 @@ class UserProfile extends Component {
     return (
       <div>
         <h1>{user.userHandle}</h1>
-        <img src={profilePicture} alt="User Profile" style={{ height: '150px' }} />
+        <img src={profilePicture} alt="User Profile" className="user-avatar" />
         <p>{userDescription}</p>
         {this.renderUpdateButton(user)}
         <UserPosts authorId={id} />
