@@ -14,7 +14,7 @@ export default function (state = {}, action) {
       let posts = _.sortBy(action.payload.data, "createDate");
       const postObj = _.mapKeys(posts.reverse(), '_id');
       newState = Object.assign({}, state, postObj);
-      return newState;    
+      return newState;
     default:
       return state;
   }

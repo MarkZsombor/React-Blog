@@ -1,0 +1,17 @@
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+#main {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}

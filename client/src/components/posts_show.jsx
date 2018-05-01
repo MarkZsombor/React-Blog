@@ -24,7 +24,7 @@ class PostsShow extends Component {
       if (auth._id === post.authorId) {
         return (
           <button
-            className="btn red"
+            className="col s3 offset-s2 btn red"
             onClick={this.onDeleteClick.bind(this)}
           >
           Delete Post
@@ -41,7 +41,7 @@ class PostsShow extends Component {
       if (auth._id === post.authorId) {
         return (
           <Link
-            className="btn blue darken-2"
+            className="col s3 offset-s2 btn blue darken-2"
             to={`/posts/update/${post._id}`}
           >
             Update Post
@@ -67,14 +67,16 @@ class PostsShow extends Component {
     let postDate = post.createDate.slice(0, 10);
     return (
       <div>
+        <div className="row style={{ margin: '10px' }}">
+          {this.renderUpdateButton()}
+          {this.renderDeleteButton()}
+        </div>
         <h3 className="post-title">{post.title}</h3>
         <h5 className="post-author"><Link to={`/users/${post.authorId}`}>By {post.authorHandle}</Link></h5>
         <h5 className="post-categories">Categories: {post.categories}</h5>
         {this.renderImage(post)}
-        <p className="post-content">{post.content}</p>
+        <p className="post-content" style={{ whiteSpace: 'pre-line' }}>{post.content}</p>
         <p className="post-date">Posted on: {postDate}</p>
-        {this.renderUpdateButton()}
-        {this.renderDeleteButton()}
       </div>
     );
   }

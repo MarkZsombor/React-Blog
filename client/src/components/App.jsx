@@ -13,7 +13,7 @@ import PostsUpdate from './posts_update';
 import UserList from './User_List';
 import UserProfile from './User_Profile';
 import UserUpdate from './Update_user';
-// import Footer from './footer';
+import Footer from './footer';
 
 class App extends Component {
   constructor(props) {
@@ -53,9 +53,9 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div>
+          <div id="main">
             <Header />
-            <div className="container">
+            <div className="content container">
               <Switch>
                 <Route exact path="/posts/all" component={PostsIndex} />
                 <Route path="/posts/new" component={PostsNew} onPostSubmit= { this.handlePostSubmit } />
@@ -66,8 +66,8 @@ class App extends Component {
                 <Route path="/users/:id" component={UserProfile} />
                 <Route exact path="/" component={Launch} />
               </Switch>
+              <Footer />
             </div>
-            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </div>
