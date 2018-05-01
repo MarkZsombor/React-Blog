@@ -41,7 +41,7 @@ class PostsShow extends Component {
       if (auth._id === post.authorId) {
         return (
           <Link
-            className="btn blue"
+            className="btn blue darken-2"
             to={`/posts/update/${post._id}`}
           >
             Update Post
@@ -68,8 +68,8 @@ class PostsShow extends Component {
     return (
       <div>
         <h3 className="post-title">{post.title}</h3>
-        <h4 className="post-author"><Link to={`/users/${post.authorId}`}>By {post.authorHandle}</Link></h4>
-        <h4 className="post-categories">Categories: {post.categories}</h4>
+        <h5 className="post-author"><Link to={`/users/${post.authorId}`}>By {post.authorHandle}</Link></h5>
+        <h5 className="post-categories">Categories: {post.categories}</h5>
         {this.renderImage(post)}
         <p className="post-content">{post.content}</p>
         <p className="post-date">Posted on: {postDate}</p>

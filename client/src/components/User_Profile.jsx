@@ -16,7 +16,7 @@ class UserProfile extends Component {
       if (auth._id === user._id) {
         return (
           <Link
-            className="btn blue"
+            className="btn blue darken-2"
             to={`/users/update/${user._id}`}
           >
             Update User Info

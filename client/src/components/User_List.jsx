@@ -15,9 +15,11 @@ class UserList extends Component {
       return (
         <li key={user._id} className="list-group-item card blue">
           <div className="card-content">
-            <p><Link to={`/users/${user._id}`} className="white-text">{user.userHandle}</Link></p>
+            <h5><Link to={`/users/${user._id}`} className="white-text">{user.userHandle}</Link></h5>
             <p className="white-text">{user.userInfo}</p>
-            <p><Link to={`/users/${user._id}`} className="black-text">Click Here to see Posts!</Link></p>
+          </div>
+          <div className="card-action">
+            <Link to={`/users/${user._id}`} className="black-text">User Posts and Profile</Link>
           </div>
         </li>
       );
