@@ -42,10 +42,17 @@ class UserUpdate extends Component {
             component={this.renderField}
           />
           <Field
-            label={this.props.initialValues.categories || 'Please add some information about yourself'}
+            label={this.props.initialValues.userInfo || 'Please add some information about yourself'}
             name="userInfo"
             type="input"
             placeholder="What do you want readers to know about you?"
+            component={this.renderField}
+          />
+          <Field
+            label={this.props.initialValues.picture || 'Please add a profile picture'}
+            name="picture"
+            type="input"
+            placeholder="Add a URL for your picture"
             component={this.renderField}
           />
           <button type="submit" className="btn blue darken-2">Update</button>
@@ -53,8 +60,6 @@ class UserUpdate extends Component {
         </form>
       </div>
     );
-    // }
-    // return null;
   }
 }
 
@@ -65,6 +70,7 @@ function mapStateToProps({ users }, ownProps) {
       initialValues: {
         userHandle: user.userHandle,
         userInfo: user.userInfo,
+        picture: user.picture,
       },
     };
   }

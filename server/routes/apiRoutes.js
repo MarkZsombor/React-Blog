@@ -31,6 +31,7 @@ module.exports = (app) => {
       }
       req.body.userHandle ? user.userHandle = req.body.userHandle : null;
       req.body.userInfo ? user.userInfo = req.body.userInfo : null;
+      req.body.picture ? user.picture = req.body.picture : null;
       user.save((err) => {
         if (err) {
           res.send(err);
