@@ -10,7 +10,7 @@ class UserProfile extends Component {
     this.props.fetchPosts();
   }
 
-  renderPostsList() {
+  renderPosts() {
     const { posts } = this.props;
     const { authorId } = this.props;
     const userPosts = [];
@@ -25,10 +25,12 @@ class UserProfile extends Component {
       }
       return _.map(userPosts, (post) => {
         return (
-          <li key={post._id} className="list-group-item">
-            <Link to={`/posts/${post._id}`}>
-              {post.title}
-            </Link>
+          <li key={post._id} className="list-group-item card blue">
+            <div className="card-content">
+              <Link to={`/posts/${post._id}`} className=" white-text">
+                {post.title}
+              </Link>
+            </div>
           </li>
         );
       });
@@ -40,7 +42,7 @@ class UserProfile extends Component {
       <div>
         <h1>User Posts</h1>
         <ul className="list-group">
-          {this.renderPostsList()}
+          {this.renderPosts()}
         </ul>
       </div>
     );
