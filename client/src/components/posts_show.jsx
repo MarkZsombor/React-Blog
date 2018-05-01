@@ -52,7 +52,7 @@ class PostsShow extends Component {
   }
 
   renderImage(post) {
-    if (post.imageURL && post.imageURL != "null") {
+    if (post.imageURL && post.imageURL !== "null") {
       return (
         <img src={post.imageURL} alt={post.title} style={{ height: '300px' }} />
       );
@@ -64,7 +64,6 @@ class PostsShow extends Component {
     if (!post) {
       return <div>...Loading...</div>;
     }
-    console.log('post', post);
     let postDate = post.createDate.slice(0, 10);
     return (
       <div>

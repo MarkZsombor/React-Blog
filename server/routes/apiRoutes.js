@@ -24,6 +24,23 @@ module.exports = (app) => {
     });
   });
 
+  app.put('/api/user/:id', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+      if (err) {
+        res.send(err);
+      }
+      req.body.userHandle ? user.userHandle = req.body.userHandle : null;
+      req.body.userInfo ? user.userInfo = req.body.userInfo : null;
+      user.save((err) => {
+        if (err) {
+          res.send(err);
+        }
+        res.json({ message: 'User Updated' });
+      });
+    });
+  });
+
+
   app.get('/api/posts', (req, res) => {
     Post.find((err, posts) => {
       if (err) {
@@ -66,12 +83,13 @@ module.exports = (app) => {
       }
       req.body.title ? post.title = req.body.title : null;
       req.body.categories ? post.categories = req.body.categories : null;
+      req.body.image ? post.imageURL = req.body.image : null;
       req.body.content ? post.content = req.body.content : null;
       post.save((err) => {
         if (err) {
           res.send(err);
         }
-        res.json({ message: "Post Updated" });
+        res.json({ message: 'Post Updated' });
       });
     });
   });

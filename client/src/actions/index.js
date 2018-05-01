@@ -7,6 +7,7 @@ import {
   FETCH_POST,
   DELETE_POST,
   UPDATE_POST,
+  UPDATE_USER,
 } from './types';
 
 // export const fetchUser = () => {
@@ -67,5 +68,15 @@ export function updatePost(values, id, callback) {
         () => callback(),
         res => dispatch({ type: UPDATE_POST, payload: res }),
       );
+  };
+}
+
+export function updateUser(values, id, callback) {
+  return (dispatch) => {
+    axios.put(`/api/user/${id}`, values)
+      .then(
+        () => callback(),
+        res => dispatch({ type: UPDATE_USER, payload: res }),
+    );
   };
 }
