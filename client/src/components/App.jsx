@@ -12,6 +12,7 @@ import PostsShow from './posts_show';
 import PostsUpdate from './posts_update';
 import UserList from './User_List';
 import UserProfile from './User_Profile';
+// import Footer from './footer';
 
 class App extends Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class App extends Component {
                 <Route exact path="/" component={Launch} />
               </Switch>
             </div>
+            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </div>
