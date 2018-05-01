@@ -11,12 +11,17 @@ class PostsIndex extends Component {
   }
 
   renderPosts() {
+    const { auth }= this.props;
     return _.map(this.props.posts, (post) => {
+      let cardClass = 'list-group-item card blue';
+      if (post.authorId === auth._id) {
+        cardClass += ' lighten-2';
+      }
       return (
-        <li key={post._id} className="list-group-item card blue">
+        <li key={post._id} className={cardClass}>
           <div className="card-content white-text">
             <Link to={`/posts/${post._id}`} className="white-text">{post.title}</Link>
-            <span className="right"> By: <Link to={`/users/${post.authorId}`} className="white-text">{post.authorHandle}</Link></span>
+            <span className="right"><Link to={`/users/${post.authorId}`} className="white-text"> By: {post.authorHandle}</Link></span>
           </div>
         </li>
       );
@@ -36,7 +41,7 @@ class PostsIndex extends Component {
 }
 
 function mapStateToProps(state) {
-  return { posts: state.posts };
+  return { posts: state.posts, auth: state.auth };
 }
 
 export default connect(mapStateToProps, { fetchPosts })(PostsIndex);

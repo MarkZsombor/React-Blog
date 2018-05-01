@@ -35,6 +35,7 @@ class UserProfile extends Component {
         );
       });
     }
+    return null;
   }
 
   render() {

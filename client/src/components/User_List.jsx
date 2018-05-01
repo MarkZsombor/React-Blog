@@ -11,9 +11,14 @@ class UserList extends Component {
   }
 
   renderUsers() {
+    const { currentUser } = this.props;
     return _.map(this.props.users, (user) => {
+      let cardClass = 'list-group-item card blue';
+      if (user._id === currentUser._id) {
+        cardClass += ' lighten-2';
+      }
       return (
-        <li key={user._id} className="list-group-item card blue">
+        <li key={user._id} className={cardClass}>
           <div className="card-content">
             <h5><Link to={`/users/${user._id}`} className="white-text">{user.userHandle}</Link></h5>
             <p className="white-text">{user.userInfo}</p>
@@ -39,7 +44,7 @@ class UserList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { users: state.users };
+  return { users: state.users, currentUser: state.auth };
 }
 
 export default connect(mapStateToProps, { fetchUsers })(UserList);
