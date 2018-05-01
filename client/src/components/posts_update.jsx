@@ -25,6 +25,7 @@ class PostsUpdate extends Component {
         <field.type
           className="form-control"
           type="text"
+          placeholder={field.placeholder}
           // this will map all the event handlers to the Field
           {...field.input}
         />
@@ -35,8 +36,6 @@ class PostsUpdate extends Component {
   render() {
     // This function is available from the reduxForm function at end of file.
     const { handleSubmit } = this.props;
-    // if (this.props.post) {
-    //   const { post } = this.props;
       return (
         <div>
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -44,12 +43,21 @@ class PostsUpdate extends Component {
               label={this.props.initialValues.title}
               name="title"
               type="input"
+              placeholder="Post Title"
               component={this.renderField}
             />
             <Field
-              label={this.props.initialValues.categories}
+              label={this.props.initialValues.categories || 'Please add some Categories'}
               name="categories"
               type="input"
+              placeholder="Categories"
+              component={this.renderField}
+            />
+            <Field
+              label={this.props.initialValues.imageURL || 'Please add a image URL'}
+              name="image"
+              type="input"
+              placeholder="Image URL, enter null to remove image"
               component={this.renderField}
             />
             <Field
@@ -75,6 +83,7 @@ function mapStateToProps({ posts }, ownProps) {
       initialValues: {
         title: post.title,
         categories: post.categories,
+        imageURL: post.imageURL,
         content: post.content,
       },
     };
