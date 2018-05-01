@@ -14,9 +14,11 @@ class UserList extends Component {
     return _.map(this.props.users, (user) => {
       return (
         <li key={user._id} className="list-group-item card blue">
-          <Link to={`/users/${user._id}`} className="card-content white-text">
-            {user.userHandle}
-          </Link>
+          <div className="card-content">
+            <p><Link to={`/users/${user._id}`} className="white-text">{user.userHandle}</Link></p>
+            <p className="white-text">{user.userInfo}</p>
+            <p><Link to={`/users/${user._id}`} className="black-text">Click Here to see Posts!</Link></p>
+          </div>
         </li>
       );
     });
