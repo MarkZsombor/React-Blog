@@ -31,12 +31,16 @@ class UserProfile extends Component {
     const { id } = this.props.match.params;
     let user = [];
     let profilePicture = '';
+    let userDescription = 'User has yet to describe themself';
     if (users) {
       user = users[id];
       if (!user.picture) {
         profilePicture = 'https://i.pinimg.com/originals/0e/ca/cf/0ecacf1245c5e8c723414ea1a19407cf.jpg';
       } else {
         profilePicture = user.picture;
+      }
+      if (user.userInfo) {
+        userDescription = user.userInfo;
       }
     }
     if (!user) {
@@ -46,7 +50,7 @@ class UserProfile extends Component {
       <div>
         <h1>{user.userHandle}</h1>
         <img src={profilePicture} alt="User Profile" style={{ height: '150px' }} />
-        <p>{user.userInfo}</p>
+        <p>{userDescription}</p>
         {this.renderUpdateButton(user)}
         <UserPosts authorId={id} />
       </div>
