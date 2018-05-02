@@ -35,7 +35,7 @@ class UserProfile extends Component {
     if (users) {
       user = users[id];
       if (!user.picture) {
-        profilePicture = 'http://localhost:3000/images/no-profile.jpg';
+        profilePicture = '../images/no-profile.jpg';
       } else {
         profilePicture = user.picture;
       }

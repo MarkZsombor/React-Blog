@@ -1,15 +1,14 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 import Footer from './footer';
 
 const Launch = () => {
   return (
     <div>
-      <h1>Welcome to <span className="blue-text darken-2">Blogtastic!!</span></h1>
+      <h1>Welcome to <span className="blue-text">Blogtastic!!</span></h1>
       <div className="section">
         <h3>So... what is it?</h3>
-        <p>Blogtastic is a blog site built by <a href="https://markzsombor.github.io/">Mark Zsombor</a> to further his knowledge in web-technologies, primarily React and Redux. Along the way other tech has been enlisted such as Materialize CSS, NodeJS, MongoDB and PassportJS.</p>
+        <p>Blogtastic is a blog site built by <b>Mark Zsombor</b> to further my knowledge in web-technologies, primarily React and Redux. Along the way other tech has been enlisted such as Materialize CSS, NodeJS, MongoDB and PassportJS. Checkout my portfolio site at <a href="https://markzsombor.github.io/">markzsombor.github.io</a> if you'd like to see more of my work.</p>
       </div>
       <div className="section">
         <h3>Ok, so how do I use it?</h3>
@@ -18,7 +17,7 @@ const Launch = () => {
       </div>
       <div className="section">
         <h3>Can I make posts?</h3>
-        <p> Sure you can! All you need to do is to <a href="/auth/google" className="orange-text darken-2">Register an account using Google</a>, then as long as you're <a href="/auth/google">Logged in</a> you will find an Add a Post link at the top right of the page. Also after registering go to your profile and add a picture and a description of yourself for others to see.</p>
+        <p> Sure you can! All you need to do is to <a href="/auth/google" className="orange-text">Register an account using Google</a>, then as long as you're <a href="/auth/google">Logged in</a> you will find an Add a Post link at the top right of the page. Also after registering go to your profile and add a picture and a description of yourself for others to see.</p>
       </div>
       <div className="section">
         <h3>Can I see how you made it?</h3>

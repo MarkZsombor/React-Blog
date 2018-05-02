@@ -3,17 +3,25 @@ body {
 }
 
 textarea {
-  height: 120px;
+  /* height: 120px; */
+  height: 10em;
 }
 
 .m10 {
-  margin-top: 10px;
+  margin-top: 0.3em;
 }
 
 .post-image {
-  height: 250px;
+  /* height: 250px; */
+  height: 17em;
 }
 
 .user-avatar {
-  height: 150px;
+  /* height: 150px; */
+  height: 11em;
+}
+
+
+.brand-logo {
+  margin-left: 0.65em;
 }

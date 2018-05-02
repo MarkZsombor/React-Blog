@@ -47,6 +47,7 @@ class App extends Component {
     this.props.fetchUser();
     this.loadPostsFromServer();
     setInterval(this.loadPostsFromServer, this.props.pollInterval);
+    this.props.fetchUsers();
   }
 
   render() {

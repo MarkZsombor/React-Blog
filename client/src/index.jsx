@@ -8,7 +8,6 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
-// import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
   reducers,
@@ -19,10 +18,9 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <App
-      url="http://localhost:3000"
+      url="/"
       pollInterval={20000}
     />
   </Provider>,
   document.getElementById('root'),
 );
-// registerServiceWorker();

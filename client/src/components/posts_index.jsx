@@ -21,7 +21,7 @@ class PostsIndex extends Component {
         <li key={post._id} className={cardClass}>
           <div className="card-content white-text">
             <Link to={`/posts/${post._id}`} className="white-text">{post.title}</Link>
-            <span className="right"><Link to={`/users/${post.authorId}`} className="white-text"> By: {post.authorHandle}</Link></span>
+            <Link to={`/users/${post.authorId}`} className="white-text right"> By: {post.authorHandle}</Link>
           </div>
         </li>
       );

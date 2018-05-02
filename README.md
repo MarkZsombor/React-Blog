@@ -6,6 +6,8 @@ TODO: Fix the auto-populate update forms. Add comments to posts.
 
 ## Getting Started
 
+Currently won't work, need to describe env setup
+
 Clone the Repo!  
 Install Dependancies! `npm install`  
 Start the Server! `npm run dev`  
