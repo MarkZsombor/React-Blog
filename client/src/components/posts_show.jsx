@@ -52,7 +52,7 @@ class PostsShow extends Component {
   }
 
   renderImage(post) {
-    if (post.imageURL && post.imageURL !== "null") {
+    if (post.imageURL && post.imageURL !== "none") {
       return (
         <img src={post.imageURL} alt={post.title} className="post-image" />
       );

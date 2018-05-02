@@ -36,43 +36,41 @@ class PostsUpdate extends Component {
   render() {
     // This function is available from the reduxForm function at end of file.
     const { handleSubmit } = this.props;
-      return (
-        <div>
-          <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-            <Field
-              label={this.props.initialValues.title}
-              name="title"
-              type="input"
-              placeholder="Post Title"
-              component={this.renderField}
-            />
-            <Field
-              label={this.props.initialValues.categories || 'Please add some Categories'}
-              name="categories"
-              type="input"
-              placeholder="Categories"
-              component={this.renderField}
-            />
-            <Field
-              label={this.props.initialValues.imageURL || 'Please add a image URL'}
-              name="image"
-              type="input"
-              placeholder="Image URL, enter null to remove image"
-              component={this.renderField}
-            />
-            <Field
-              label={this.props.initialValues.content}
-              name="content"
-              type="textarea"
-              component={this.renderField}
-            />
-            <button type="submit" className="waves-effect waves-light btn blue darken-2">Update</button>
-            <Link to="/" className="waves-effect waves-light btn red">Cancel</Link>
-          </form>
-        </div>
-      );
-    // }
-    // return null;
+    return (
+      <div>
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+          <Field
+            label={this.props.initialValues.title}
+            name="title"
+            type="input"
+            placeholder="Post Title"
+            component={this.renderField}
+          />
+          <Field
+            label={this.props.initialValues.categories || 'Please add some Categories'}
+            name="categories"
+            type="input"
+            placeholder="Categories"
+            component={this.renderField}
+          />
+          <Field
+            label={this.props.initialValues.imageURL || 'Please add a image URL'}
+            name="image"
+            type="input"
+            placeholder="Image URL, enter none to remove image"
+            component={this.renderField}
+          />
+          <Field
+            label={this.props.initialValues.content}
+            name="content"
+            type="textarea"
+            component={this.renderField}
+          />
+          <button type="submit" className="waves-effect waves-light btn blue darken-2">Update</button>
+          <Link to="/" className="waves-effect waves-light btn red">Cancel</Link>
+        </form>
+      </div>
+    );
   }
 }
 

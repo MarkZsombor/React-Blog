@@ -9,7 +9,7 @@ const Launch = () => {
       <h1>Welcome to <span className="blue-text darken-2">Blogtastic!!</span></h1>
       <div className="section">
         <h3>So... what is it?</h3>
-        <p>Blogtastic is a blog site built by Mark Zsombor to further his knowledge in web-technologies, primarily React and Redux. Along the way other tech has been enlisted such as Materialize CSS, NodeJS, MongoDB and PassportJS.</p>
+        <p>Blogtastic is a blog site built by <a href="https://markzsombor.github.io/">Mark Zsombor</a> to further his knowledge in web-technologies, primarily React and Redux. Along the way other tech has been enlisted such as Materialize CSS, NodeJS, MongoDB and PassportJS.</p>
       </div>
       <div className="section">
         <h3>Ok, so how do I use it?</h3>
@@ -19,6 +19,10 @@ const Launch = () => {
       <div className="section">
         <h3>Can I make posts?</h3>
         <p> Sure you can! All you need to do is to <a href="/auth/google" className="orange-text darken-2">Register an account using Google</a>, then as long as you're <a href="/auth/google">Logged in</a> you will find an Add a Post link at the top right of the page. Also after registering go to your profile and add a picture and a description of yourself for others to see.</p>
+      </div>
+      <div className="section">
+        <h3>Can I see how you made it?</h3>
+        <p>Sure! All the code I used for this project can be found at <a href="https://github.com/MarkZsombor/React-Blog">Github.</a> Take a look if you're interested!</p>
       </div>
     </div>
   );
