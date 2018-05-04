@@ -7,7 +7,7 @@ npm-debug.log
 # IntelliJ
 *.iml
 /.idea
-keys.js
+dev.js
 
 /oldclient
 package-lock.json
