@@ -5,11 +5,6 @@ import { connect } from 'react-redux';
 import { updatePost } from '../actions/index';
 
 class PostsUpdate extends Component {
-  // componentDidMount() {
-  //   const { id } = this.props.match.params;
-  //   this.props.fetchPost(id);
-  // }
-
   onSubmit(values) {
     const { id } = this.props.match.params;
     this.props.updatePost(values, id, () => {
@@ -88,10 +83,6 @@ function mapStateToProps({ posts }, ownProps) {
   }
   return { initialValues: {} };
 }
-
-// function mapStateToProps({ posts }, ownProps) {
-//   return { post: posts[ownProps.match.params.id] };
-// }
 
 // All the forms in the app need unique names.
 // export default reduxForm({ form: 'PostsUpdateForm', enableReinitialize: true })(connect(mapStateToProps, { updatePost })(PostsUpdate));
