@@ -11,6 +11,7 @@ require('./server/models/User');
 require('./server/services/passport');
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(keys.mongoURI);
 const db = mongoose.connection;
@@ -30,7 +31,16 @@ app.use(passport.session());
 require('./server/routes/authRoutes')(app);
 require('./server/routes/apiRoutes')(app);
 
-const PORT = process.env.PORT || 5000;
+if(process.env.NODE_ENV === 'production') {
+  // Serve up the production assets
+  app.use(express.static('client/build'));
+
+  // Serve up index.html as a fallback to everything
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
