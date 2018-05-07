@@ -10,12 +10,13 @@ TODO: Fix the auto-populate update forms. Add comments to posts.
 
 ## Getting Started
 
-Currently won't work, need to describe env setup
+If you want to run a version of the site locally you will need to follow these steps:  
 
 Clone the Repo!  
-Install Dependancies! `npm install`  
-Start the Server! `npm run dev`  
-View the Page! `localhost:8080`  
+Install Dependancies! `npm install` (this command will need to be run in the parent directory and again in the client directory for the server and front end depenancies)  
+Create a dev.js file in the server/config file based on dev.example.js. You will need a G+ API key and secret and a mongoDB server location.  
+Start the Servers! `npm run dev`  
+View the Page! `localhost:3000`  
 
 ## Dependancies
 
