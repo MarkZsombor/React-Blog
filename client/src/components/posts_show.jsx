@@ -8,12 +8,13 @@ class PostsShow extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.fetchPost(id);
+    console.log('props', this.props)
   }
 
   onDeleteClick() {
     const { id } = this.props.match.params;
     this.props.deletePost(id, () => {
-      this.props.history.push('/');
+      this.props.history.push('/posts/all');
     });
   }
 
