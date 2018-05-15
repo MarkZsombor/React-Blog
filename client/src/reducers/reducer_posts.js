@@ -13,7 +13,7 @@ export default function (state = {}, action) {
     case FETCH_POSTS:
       let posts = _.sortBy(action.payload.data, "createDate");
       const postObj = _.mapKeys(posts.reverse(), '_id');
-      newState = Object.assign({}, state, postObj);
+      newState = Object.assign({}, postObj, state);
       return newState;
     default:
       return state;
